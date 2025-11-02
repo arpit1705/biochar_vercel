@@ -183,9 +183,8 @@ p {
 
 .hero .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 3.5rem;
-  align-items: center;
+  gap: 3rem;
+  align-items: start;
 }
 
 .hero h1 {
@@ -194,46 +193,33 @@ p {
 }
 
 .hero .subtitle {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
+  max-width: 48ch;
 }
 
-.hero-card {
-  padding: 2.5rem;
-  border-radius: 32px;
-  background: var(--surface);
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-mission {
+  margin-top: 3rem;
+  padding: clamp(2.2rem, 4vw, 3rem);
+  border-radius: 28px;
   border: 1px solid var(--border);
-  box-shadow: 0 45px 60px rgba(6, 8, 16, 0.45);
+  background: rgba(16, 23, 41, 0.78);
+  box-shadow: 0 26px 72px rgba(4, 10, 26, 0.35);
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.stat {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
+.hero-mission h2 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  margin-bottom: 1.25rem;
   color: var(--accent);
 }
 
-.label {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-.hero-note {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 0.75rem;
-}
-
-.hero-author {
-  color: var(--muted);
-  font-weight: 600;
+.hero-mission p + p {
+  margin-top: 1rem;
 }
 
 .mission .split {
@@ -322,32 +308,37 @@ p {
   margin-bottom: 0.75rem;
 }
 
-.projects {
+.team {
   background: linear-gradient(180deg, rgba(6, 8, 16, 0.95), rgba(6, 8, 16, 1));
 }
 
-.project-cards {
+.team-intro {
+  max-width: 58ch;
+  margin-top: 1.5rem;
+}
+
+.team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.8rem;
   margin-top: 3rem;
 }
 
-.project-cards article {
+.team-member {
   border-radius: 24px;
   padding: 2rem;
   background: var(--surface-strong);
   border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  gap: 0.75rem;
 }
 
-.project-cards ul {
-  list-style: none;
-  display: grid;
-  gap: 0.35rem;
-  color: var(--muted);
+.team-role {
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .testimonials {
@@ -487,7 +478,9 @@ p {
     top: 72px;
     right: 20px;
     flex-direction: column;
-    padding: 1.5rem;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
     background: var(--surface-strong);
     border-radius: 18px;
     border: 1px solid var(--border);
@@ -495,6 +488,12 @@ p {
     pointer-events: none;
     transform: translateY(-10px);
     transition: opacity 0.2s ease, transform 0.2s ease;
+    width: calc(100vw - 40px);
+    max-width: 320px;
+  }
+
+  .nav-links a {
+    width: 100%;
   }
 
   .nav-links.open {
@@ -521,7 +520,7 @@ p {
     padding: 4.5rem 0;
   }
 
-  .hero-card {
+  .hero-mission {
     padding: 2rem;
   }
 
