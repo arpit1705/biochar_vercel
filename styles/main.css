@@ -203,23 +203,32 @@ p {
   gap: 1rem;
 }
 
-.hero-mission {
-  margin-top: 3rem;
-  padding: clamp(2.2rem, 4vw, 3rem);
-  border-radius: 28px;
-  border: 1px solid var(--border);
-  background: rgba(16, 23, 41, 0.78);
-  box-shadow: 0 26px 72px rgba(4, 10, 26, 0.35);
+.hero-highlights {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
 }
 
-.hero-mission h2 {
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
-  margin-bottom: 1.25rem;
+.hero-highlights div {
+  background: rgba(16, 23, 41, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.25rem 1.4rem;
+}
+
+.highlight-number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--accent);
 }
 
-.hero-mission p + p {
-  margin-top: 1rem;
+.highlight-label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 .mission .split {
@@ -515,8 +524,12 @@ p {
     padding: 4.5rem 0;
   }
 
-  .hero-mission {
-    padding: 2rem;
+  .hero-highlights {
+    gap: 1rem;
+  }
+
+  .hero-highlights div {
+    padding: 1.1rem 1.2rem;
   }
 
   .contact-card {
