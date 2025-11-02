@@ -114,49 +114,52 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(12px);
-  background: rgba(6, 8, 16, 0.9);
-  border-bottom: 1px solid rgba(138, 150, 184, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(6, 8, 16, 0.82);
+  border-bottom: 1px solid rgba(138, 150, 184, 0.08);
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
-  padding: 1.25rem 0;
+  gap: 1rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
 }
 
 .logo {
   font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1.25rem;
   color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.nav-links li {
+  display: inline-flex;
 }
 
 .nav-links a {
-  font-weight: 600;
-  font-size: 0.95rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.nav .cta {
-  border: 1px solid var(--border);
-  padding: 0.6rem 1.4rem;
-  border-radius: 999px;
-  color: var(--accent);
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-
-.nav .cta:hover {
-  background: rgba(109, 227, 164, 0.12);
+.nav-links a:hover,
+.nav-links a:focus {
+  border-color: var(--accent);
 }
 
 .nav-toggle {
@@ -487,7 +490,9 @@ p {
     top: 72px;
     right: 20px;
     flex-direction: column;
-    padding: 1.5rem;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
     background: var(--surface-strong);
     border-radius: 18px;
     border: 1px solid var(--border);
@@ -495,16 +500,18 @@ p {
     pointer-events: none;
     transform: translateY(-10px);
     transition: opacity 0.2s ease, transform 0.2s ease;
+    width: calc(100vw - 40px);
+    max-width: 320px;
+  }
+
+  .nav-links a {
+    width: 100%;
   }
 
   .nav-links.open {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-  }
-
-  .nav .cta {
-    display: none;
   }
 
   .nav-toggle {
